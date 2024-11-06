@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    width: 100px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+.feedback-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feedback-item {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.feedback-box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    border-radius: 5px;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.gray {
+    background-color: gray;
+}
+
+#attempts-left {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#restart-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.number-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: default;
+    user-select: none;
+}
+
+.number.green {
+    background-color: green;
+    color: white;
+}
+
+.number.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.number.gray {
+    background-color: gray;
+    color: white;
+}

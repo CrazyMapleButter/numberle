@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numberle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Numberle</h1>
+        <p>Guess the 4-digit number. You have 6 attempts!</p>
+        <div class="input-container">
+            <input type="number" id="guess" maxlength="4" placeholder="Enter 4-digit number" />
+            <button id="submit-btn">Guess</button>
+        </div>
+        <div id="feedback-container" class="feedback-container"></div>
+        <div id="attempts-left">
+            <p>Attempts left: <span id="attempts-count">6</span></p>
+        </div>
+        <button id="restart-btn" style="display: none;">Restart Game</button>
+
+        <!-- Number list for color coding -->
+        <div class="number-list" id="number-list">
+            <span class="number" data-number="0">0</span>
+            <span class="number" data-number="1">1</span>
+            <span class="number" data-number="2">2</span>
+            <span class="number" data-number="3">3</span>
+            <span class="number" data-number="4">4</span>
+            <span class="number" data-number="5">5</span>
+            <span class="number" data-number="6">6</span>
+            <span class="number" data-number="7">7</span>
+            <span class="number" data-number="8">8</span>
+            <span class="number" data-number="9">9</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

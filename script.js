@@ -1,13 +1,32 @@
-let secretNumber = "8375";
+let secretNumber;
 let attemptsLeft = 6;
 let gameOver = false;
 
-// Function to set a new daily answer (manual update)
-function setDailySecretNumber(newSecret) {
-    secretNumber = newSecret;
+// Generate a fixed answer based on the current date
+function generateDailySecretNumber() {
+    const currentDate = new Date();
+    const estOffset = currentDate.getTimezoneOffset() + 300; // Convert to EST (UTC-5)
+    const estDate = new Date(currentDate.getTime() + estOffset * 60 * 1000);
+
+    // Get the date components (year, month, day) to ensure the answer resets daily
+    const year = estDate.getUTCFullYear();
+    const month = estDate.getUTCMonth();
+    const day = estDate.getUTCDate();
+
+    // Create a unique seed for the day
+    const seed = `${year}-${month + 1}-${day}`;
+
+    // Use a simple hash function to generate a number between 1000 and 9999
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+        hash = (hash * 31 + seed.charCodeAt(i)) % 10000;
+    }
+
+    // Ensure the number is 4 digits (pad with 1000 if necessary)
+    return (hash + 1000).toString().slice(0, 4);
 }
 
-// Function to provide feedback for each guess
+// Provide feedback for each guess
 function getFeedback(guess, secret) {
     let feedback = [];
     for (let i = 0; i < guess.length; i++) {
@@ -46,6 +65,7 @@ function updateNumberColors(guess, feedback) {
 
 // Start a new game
 function startNewGame() {
+    secretNumber = generateDailySecretNumber();
     attemptsLeft = 6;
     gameOver = false;
     document.getElementById('attempts-count').textContent = attemptsLeft;
